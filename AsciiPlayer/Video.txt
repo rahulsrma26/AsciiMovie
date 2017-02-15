@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <opencv2\opencv.hpp>
+//#include <opencv2/core/core.hpp>
+//#include <opencv2/imgproc/imgproc.hpp>
+//#include <opencv2/highgui/highgui.hpp>
+
+cv::VideoCapture inputVideo;
+cv::Mat currentOutputFrame;
+const std::string outputWindowName = "ASCII Player";
+
+int main(int argc, char* argv[]){
+	using namespace std;
+	cout << "ver : " << CV_VERSION << endl;
+
+	string fileName((argc == 2) ? string(argv[1]) : "..\\Videos\\test2.mp4");
+	
+	inputVideo.open(fileName);
+	if (!inputVideo.isOpened()){
+		cout << "Cannot open the video file" << endl;
+		return -1;
+	}
+
+	cv::namedWindow(outputWindowName, CV_WINDOW_AUTOSIZE | CV_WINDOW_KEEPRATIO | CV_GUI_EXPANDED);
+	while (true) {
+		auto status = inputVideo.read(currentOutputFrame);
+		if (!status)
+			break;
+
+		cv::imshow(outputWindowName, currentOutputFrame);
+		if (cv::waitKey(1) == 27)
+			break;
+	}
+
+	cv::destroyWindow(outputWindowName);
+	inputVideo.release();
+	system("pause");
+}

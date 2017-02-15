@@ -240,3 +240,19 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Images
+/out
+/Videos
+/Fonts/limited8x12blurV2.cpt
+/AsciiMovie/AsciiMovie.vcxproj.filters
+/AsciiMovie/AsciiMovie_project_suppressions.cfg
+/AsciiMovie/Video03.txt
+/AsciiMovie/Video02.txt
+/AsciiMovie/Video01.txt
+/AsciiMovie/Image03.txt
+/AsciiMovie/Image02.txt
+/AsciiMovie/image01.txt
+/AsciiMovie/Camera01.txt
+/libImage2Ascii/libImage2Ascii.vcxproj.filters
+/AsciiPlayer/AsciiPlayer.vcxproj.filters
+/AsciiMovie_solution_suppressions.cfg
